@@ -58,13 +58,14 @@ for i in range(n):
         commands[s[i][0]]["point"] = commands[s[i][0]].get("point", 0) + 1
 s_out = []
 for key, value in commands.items():
-    print((key + ':'), str(value.get("games", 0)), " " + str(value.get("victory", 0)), " " + str(value.get("gate", 0)),
+    """
+    print((key + ':'), str(value.get("games", 0)), " " + str(value.get("victory", 0)), " " + str(value.get("draw", 0)),
           " " + str(value.get("loses", 0)),
           " " + str(value.get("point", 0)), sep="", end='\n')
-"""
+    """
     s_out.append(str(key) + ":" + str(value.get("games", 0)) + " " + str(value.get("victory", 0)) + " " +
-                 str(value.get("gate", 0)) + " " + str(value.get("loses", 0)) + " " + str(value.get("point", 0)))
+                 str(value.get("draw", 0)) + " " + str(value.get("loses", 0)) + " " + str(value.get("point", 0)))
 for i in range(n):
-    print(s_out[i], end='\n')
-"""
+    print(s_out[i])
+
 
