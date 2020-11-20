@@ -23,7 +23,7 @@ abacabadaba
 Sample Output 1:
 *d*%*d*#*d*
 dacabac
-
+"""
 str_contrl = input()
 cod_contrl = input()
 str_test = input()
@@ -34,11 +34,23 @@ str_contrl = "abcd"
 cod_contrl = "*d%#"
 str_test = "abacabadaba"
 cod_test = "#*%*d*%"
-
-contrl = dict()
+"""
+contrl_t = dict()
 for i in range(len(str_contrl)):
-    contrl[str_contrl[i]] = cod_contrl[i]
-print(contrl)
+    contrl_t[str_contrl[i]] = cod_contrl[i]
+#print(contrl_t)
+
+contrl_c = dict()
+for i in range(len(cod_contrl)):
+    contrl_c[cod_contrl[i]] = str_contrl[i]
+#print(contrl_c)
+
 s = ""
 for i in range(len(str_test)):
-    s +=
+    s += str(contrl_t.get(str_test[i], 0))
+print(s)
+
+c = ""
+for i in range(len(cod_test)):
+    c += str(contrl_c.get(cod_test[i], 0))
+print(c)
